@@ -1,10 +1,10 @@
 # PushDataKaggle
 Push data in drive to kaggle use Colab
-'''bash
+
     !python colabtokaggle.py -env .... -data .... - name
-'''
+    
 Result:
-'''bash
+
     size file test-000.zip: 3.6987
     _________________________________________________________________________
     Path data: test-000/content/drive/MyDrive/Datasetnew100/Malware
@@ -16,4 +16,3 @@ Result:
     successfull!!!!!!!!!!!!!!!!!
 
     -> Path data: test-000/content/drive/MyDrive/Datasetnew100/Malware
-'''
