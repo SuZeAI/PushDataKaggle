@@ -62,7 +62,7 @@ class UpKaggle(object):
   def push(self):
     for i in range(self.nfolder):
       pt = self.pwd/f"{self.namefile}-{str(i).zfill(3)}"
-      result = subprocess.run(f"kaggle datasets create -p {pt} --dir-mode skip", shell=True, capture_output=True, text=True)
+      result = subprocess.run(f"kaggle datasets create -p {pt} --dir-mode skip --public", shell=True, capture_output=True, text=True)
       print("_________________________________________________________________________")
       print(f"Path data: {self.namefile}-{str(i).zfill(3)}{self.pathData}")
       print(result.stdout)
