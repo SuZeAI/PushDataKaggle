@@ -1,0 +1,11 @@
+- Cách đẩy dataset lên kaggle:
+import os, kaggle, json
+!pip install kaggle
+!kaggle datasets init -p /content/drive/MyDrive/Datasets/FcgDatasetSplit/Benign/ZippedBenign_1
+----- Sau khi tạo meta data r sửa
+os.environ['KAGGLE_CONFIG_DIR'] = "/content/drive/MyDrive/Datasets/KaggleDataset/quangnguyen11037"
+----- chuyển vào môi trường có file kaggle.json( chứa api của nick kaggle)
+!kaggle datasets create -p /content/drive/MyDrive/Datasets/FcgDatasetSplit/Benign/ZippedBenign_1 --dir-mode skip
+
+- 
+	
