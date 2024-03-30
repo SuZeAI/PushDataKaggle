@@ -72,12 +72,13 @@ class UpKaggle(object):
   def run(self, pathData, namefile):
     self.pathData = pathData
     self.namefile = namefile
-    print("Zipping.......")
+    print("\n\n\nZipping.......")
     self.splitZipFolder()
     print("Zip successfull!!!!!!!!!!!!!!!!!")
     print("Pushing.......")
     self.push()
-
+    if os.path.exists(self.pwd):shutil.rmtree(self.pwd)
+    
 if __name__ == "__main__":
   parse = argparse.ArgumentParser(description="Cmd Python")
   parse.add_argument("-env", required=True)
