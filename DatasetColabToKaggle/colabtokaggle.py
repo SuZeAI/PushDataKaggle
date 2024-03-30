@@ -67,12 +67,15 @@ class UpKaggle(object):
       print(f"Path data: {self.namefile}-{str(i).zfill(3)}{self.pathData}")
       print(result.stdout)
 
-    print("successfull!!!!!!!!!!!!!!!!!")
+    print("All successfull!!!!!!!!!!!!!!!!!")
 
   def run(self, pathData, namefile):
     self.pathData = pathData
     self.namefile = namefile
+    print("Zipping.......")
     self.splitZipFolder()
+    print("Zip successfull!!!!!!!!!!!!!!!!!")
+    print("Pushing.......")
     self.push()
 
 if __name__ == "__main__":
