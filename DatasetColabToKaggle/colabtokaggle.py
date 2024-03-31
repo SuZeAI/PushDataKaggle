@@ -20,10 +20,16 @@ class UpKaggle(object):
     sz = os.path.getsize(path) / (1024**3)
     print(f"size file {path.stem}.zip:", round(sz, 4))
     return  sz < 20
-
+  
+  def getSizeFolder(self):
+    sz = 0
+    for file in os.listdir(self.pathData):
+      sz += os.path.getsize(f"{self.pathData}/{file}")
+    return sz / (1024**3)
+  
   def splitZipFolder(self):
-    size = shutil.disk_usage(self.pathData).used / (1024**3)
-    self.nfolder = int(size // 15 + 1)
+    size = self.getSizeFolder()
+    self.nfolder = int(size / 15) + 1
     pathfile = [f"{self.pathData}/{file}" for file in os.listdir(self.pathData)]
     self.nfile = len(pathfile)
     self.fpf = int(self.nfile // self.nfolder)
