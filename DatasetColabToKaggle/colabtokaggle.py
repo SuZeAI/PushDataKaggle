@@ -29,7 +29,7 @@ class UpKaggle(object):
   
   def splitZipFolder(self):
     size = self.getSizeFolder()
-    self.nfolder = int(size / 15) + 1
+    self.nfolder = int(size / 20) + 1
     pathfile = [f"{self.pathData}/{file}" for file in os.listdir(self.pathData)]
     self.nfile = len(pathfile)
     self.fpf = int(self.nfile // self.nfolder)
