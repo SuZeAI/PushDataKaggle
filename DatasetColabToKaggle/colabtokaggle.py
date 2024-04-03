@@ -42,7 +42,10 @@ class UpKaggle(object):
       pt = self.pwd/f"{self.namefile}-{str(i).zfill(3)}"
       if not os.path.exists(pt):
         os.makedirs(pt)
-      self.zipFolder(pathfile[(i * self.fpf) : ((i + 1) * self.fpf)], pt/f"{self.namefile}-{str(i).zfill(3)}.zip")
+      st = i * self.fpf
+      en = (i + 1) * self.fpf
+      print(f"Range file:{st} -> {en}")
+      self.zipFolder(pathfile[st : en], pt/f"{self.namefile}-{str(i).zfill(3)}.zip")
       self.createMetaData(pt)
       if not self.checkSize(pt/f"{self.namefile}-{str(i).zfill(3)}.zip"):
         raise "Size Exceeds the size limit of the zip file."
